@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roblox.Website", "Roblox.Website\Roblox.Website.csproj", "{379C28BF-ADC7-4006-9F11-8C5F36BB2002}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DBD79A43-9B92-4F9E-AAE5-B2A8D6A2CAB8}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roblox.Configuration", "Roblox.Configuration\Roblox.Configuration.csproj", "{8C501D0A-88AC-43D0-9C74-1695E3762E09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roblox.KeyHelper", "Roblox.KeyHelper\Roblox.KeyHelper.csproj", "{8F25E42F-00EF-4C90-9C4F-AC238877E7A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{379C28BF-ADC7-4006-9F11-8C5F36BB2002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{379C28BF-ADC7-4006-9F11-8C5F36BB2002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{379C28BF-ADC7-4006-9F11-8C5F36BB2002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{379C28BF-ADC7-4006-9F11-8C5F36BB2002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C501D0A-88AC-43D0-9C74-1695E3762E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C501D0A-88AC-43D0-9C74-1695E3762E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C501D0A-88AC-43D0-9C74-1695E3762E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C501D0A-88AC-43D0-9C74-1695E3762E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F25E42F-00EF-4C90-9C4F-AC238877E7A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F25E42F-00EF-4C90-9C4F-AC238877E7A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F25E42F-00EF-4C90-9C4F-AC238877E7A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F25E42F-00EF-4C90-9C4F-AC238877E7A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
