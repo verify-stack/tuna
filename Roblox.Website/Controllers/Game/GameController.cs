@@ -10,7 +10,7 @@
 */
 
 using Microsoft.AspNetCore.Mvc;
-using Roblox.Configuration.Properties;
+using Roblox.Configuration;
 
 namespace Roblox.Website.Controllers.Game
 {
@@ -20,6 +20,11 @@ namespace Roblox.Website.Controllers.Game
         // TODO: connect the db and this dependent on the db
         private IActionResult ProcessLuaFile(string file, Dictionary<string, string> ReplaceList)
         {
+            if (!Settings.IsClientsSetup)
+            {
+                return NotFound();
+            }
+
             Console.WriteLine($"Reading {file}.lua");
             string? SignFile = Utils.ReadFile($"{Utils.GetSolutionPath()}\\Roblox.Configuration\\{Settings.LuaFolder}\\{file}.lua");
             if (SignFile == null)
@@ -44,7 +49,8 @@ namespace Roblox.Website.Controllers.Game
         [HttpGet("Join.ashx")]
         public IActionResult Join()
         {
-            var ReplaceList = new Dictionary<string, string> {
+            var ReplaceList = new Dictionary<string, string> 
+            {
                 {"_burl", Settings.GetURL(Settings.MainEndpoint)},
                 {"_aurl", Settings.GetURL(Settings.APIEndpoint)},
                 {"_pid", "-1"},
@@ -63,7 +69,8 @@ namespace Roblox.Website.Controllers.Game
         public IActionResult Gameserver()
         {
             // TODO: add the assets (maybe connected to the db!)
-            var ReplaceList = new Dictionary<string, string> {
+            var ReplaceList = new Dictionary<string, string> 
+            {
                 {"...", $"1, 53640, 0, \"access=this is not required LOL\", \"{Settings.GetURL(Settings.MainEndpoint)}\", 1, 1, 60, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 1, \"{Settings.GetURL(Settings.MainEndpoint)}\", nil, nil, 2"}
             };
 
@@ -73,7 +80,8 @@ namespace Roblox.Website.Controllers.Game
         [HttpGet("Visit.ashx")]
         public IActionResult Visit()
         {
-            var ReplaceList = new Dictionary<string, string> {
+            var ReplaceList = new Dictionary<string, string> 
+            {
                 {"_burl", Settings.GetURL(Settings.MainEndpoint)},
                 {"_aurl", Settings.GetURL(Settings.APIEndpoint)},
                 {"_name", "Guest 6921"},
@@ -85,7 +93,8 @@ namespace Roblox.Website.Controllers.Game
         [HttpGet("Studio.ashx")]
         public IActionResult Studio()
         {
-            var ReplaceList = new Dictionary<string, string> {
+            var ReplaceList = new Dictionary<string, string> 
+            {
                 {"_burl", Settings.GetURL(Settings.MainEndpoint)},
                 {"_aurl", Settings.GetURL(Settings.APIEndpoint)},
             };

@@ -1,6 +1,6 @@
 ﻿// pretty cool utils
 
-using Roblox.Configuration.Properties;
+using Roblox.Configuration;
 using System.Security.Cryptography;
 using System.Text;
 

@@ -1,6 +1,6 @@
 ﻿// get assets via cache or the roblox website
 using Microsoft.AspNetCore.Mvc;
-using Roblox.Configuration.Properties;
+using Roblox.Configuration;
 
 namespace Roblox.Website.Controllers
 {
@@ -10,13 +10,20 @@ namespace Roblox.Website.Controllers
         private readonly IWebHostEnvironment _env;
         private HttpClient _httpClient;
 
-        public AssetController(IWebHostEnvironment env) {
+        public AssetController(IWebHostEnvironment env) 
+        {
             _env = env;
             _httpClient = new HttpClient();
         }
 
         [HttpGet]
-        public async Task<IActionResult> IndexAsync([FromQuery] string id) {
+        public async Task<IActionResult> IndexAsync([FromQuery] string id) 
+        {
+            if (!Settings.IsClientsSetup)
+            {
+                return NotFound();
+            }
+
             // again, ward off bad requests TO error pages
             if (!int.TryParse(id, out int AssetId))
                 return BadRequest("AssetId must be a valid number.");
@@ -57,14 +64,25 @@ namespace Roblox.Website.Controllers
         }
 
         [HttpGet("CharacterFetch.ashx")]
-        public IActionResult CharacterFetch() {
+        public IActionResult CharacterFetch() 
+        {
+            if (!Settings.IsClientsSetup)
+            {
+                return NotFound();
+            }
+
             // TODO: make this dependent on the DB
             return Content($"{Settings.GetURL(Settings.MainEndpoint)}/asset?id=585442799;", "text/plain");
         }
 
         [HttpGet("GetScriptState.ashx")]
-        public IActionResult GetScriptState() {
-            // TODO: make this dependent on the DB
+        public IActionResult GetScriptState() 
+        {
+            if (!Settings.IsClientsSetup)
+            {
+                return NotFound();
+            }
+
             return Content("0 0 0 00 0 0 0", "text/plain");
         }
     }
