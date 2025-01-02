@@ -5,6 +5,9 @@ namespace Roblox.Configuration
 {
     public class Settings
     {
+        // Database info
+        public static string MainConnection { get; } = "Host=localhost; Database=Roblox; Username=postgres; Password=1234";
+
         // URL Endpoints
         public static string BaseURL { get; } = "http://%s.roblox.com";
         public static string APIEndpoint { get; } = "api";

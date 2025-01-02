@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Roblox.Configuration;
+using Roblox.Website.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<RobloxContext>(options=>options.UseNpgsql(Settings.MainConnection));
 
 var app = builder.Build();
 
