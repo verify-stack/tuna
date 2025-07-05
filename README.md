@@ -1,5 +1,11 @@
 Tuna - basic 2013L ASP.NET CORE revival
 ==============================
+> [!WARNING]
+> This repo is now archived due to lack of motivation and effort, meaning nothing here is finished.
+
+Check out my other projects I actually work on!
+
+-----------------
 > [!CAUTION]
 > Legally, I am not responsible for any losses (financial, mental, etc). This is just a project to **recreate**, not profit.
 
